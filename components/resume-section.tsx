@@ -1,7 +1,7 @@
 /*
  * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
  * 4:11 PM -- August 17th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 
 import type { FunctionComponent, ReactNode } from "react";

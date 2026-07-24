@@ -1,7 +1,7 @@
 /*
  * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
  * 7:29 PM -- August 16th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 import type { FunctionComponent, ReactNode } from "react";
 import type { ProfessionalHistoryObject } from "@/data/professional-history-object";

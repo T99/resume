@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 /*
  * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
  * 10:43 PM -- June 29th, 2026
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 
 import type { FunctionComponent, ReactNode } from "react";

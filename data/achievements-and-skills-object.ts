@@ -1,7 +1,7 @@
 /*
  * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
  * 6:31 PM -- August 17th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 
 export type AchievementsAndSkillsObject = {
