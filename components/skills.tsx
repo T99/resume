@@ -10,6 +10,7 @@ import { ResumeSection } from "@/components/resume-section";
 
 export type SkillObject = {
 	name: string,
+	link: string,
 };
 
 export type Props = Readonly<{
@@ -24,10 +25,14 @@ export const Skills: FunctionComponent<Props> = ({
 	
 	const items: ReactNode = skills
 		.toSorted((a: SkillObject, b: SkillObject): number => a.name.localeCompare(b.name))
-		.map(({ name }: SkillObject): ReactNode => (
-				<div key={name} className={styles.item}>
-					<p className={styles.itemText}>{name}</p>
-				</div>
+		.map(({ name, link }: SkillObject): ReactNode => (
+			<a href={link}
+			   className={styles.item}
+			   target="_blank"
+			   rel="noopener noreferrer"
+			   key={name}>
+				{name}
+			</a>
 		));
 	
 	return (
