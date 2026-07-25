@@ -4,6 +4,7 @@
  * Project: resume
  */
 
+import styles from "./contact-information.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 import type { ContactInformationObject } from "../data/contact-information-object";
 
@@ -15,12 +16,12 @@ export const ContactInformation: FunctionComponent<Props> = ({
 	content,
 	link,
 }: Props): ReactNode => (
-	<div className="py-1.5" title={name}>
-		<a className="flex justify-start items-center text-inherit no-underline hover:[&_div]:text-orange-300 hover:[&_div]:scale-110" href={link} target="_blank" rel="noopener noreferrer">
-			<div className="h-5 mr-2 transition duration-250 ease-linear will-change-transform print:text-black *:h-full">
+	<div className={styles.container} title={name}>
+		<a className={styles.link} href={link} target="_blank" rel="noopener noreferrer">
+			<div className={styles.iconContainer}>
 				{(icon as unknown as () => ReactNode)()}
 			</div>
-			<p className="text-sm tracking-tight font-(family-name:--font-header) truncate">{content}</p>
+			<p className={styles.linkText}>{content}</p>
 		</a>
 	</div>
 );

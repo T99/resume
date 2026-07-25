@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
  * Project: resume
  */
 
+import styles from "./page.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 import { CONTACT_INFORMATION, type ContactInformationObject, FIND_ME_ONLINE } from "@/data/contact-information-object";
 import { PROFESSIONAL_HISTORY, type ProfessionalHistoryObject } from "@/data/professional-history-object";
@@ -31,10 +32,10 @@ const professionalHistory: ReactNode = PROFESSIONAL_HISTORY.map(
 );
 
 const Home: FunctionComponent = (): ReactNode => (
-	<div className="h-full w-full flex flex-col justify-start items-center p-8">
-		<div className="w-full max-w-250">
+	<div className={styles.container}>
+		<div className={styles.innerContainer}>
 			<ResumeSection>
-				<h1 className="text-6xl leading-[1.1] p-2 text-center">Trevor Sears</h1>
+				<h1 className={styles.name}>Trevor Sears</h1>
 			</ResumeSection>
 			<Columns>
 				<ResumeSection title="Contact Information">

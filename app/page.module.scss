@@ -1,0 +1,33 @@
+/*
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
+ * 4:49 PM -- July 24th, 2026
+ * Project: resume
+ */
+
+.container {
+	
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 2rem;
+	
+}
+
+.innerContainer {
+	
+	width: 100%;
+	max-width: 1000px;
+	
+}
+
+.name {
+	
+	padding: 0.5rem;
+	font-size: 3.75rem;
+	text-align: center;
+	line-height: 1.1;
+	
+}

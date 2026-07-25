@@ -1,0 +1,20 @@
+/*
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
+ * 6:59 PM -- July 24th, 2026
+ * Project: resume
+ */
+
+.container {
+	
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	* {
+		
+		flex: 1;
+		
+	}
+	
+}

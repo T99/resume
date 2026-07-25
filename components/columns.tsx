@@ -4,6 +4,7 @@
  * Project: resume
  */
 
+import styles from "./columns.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 
 export type Props = Readonly<{ 
@@ -13,7 +14,7 @@ export type Props = Readonly<{
 export const Columns: FunctionComponent<Props> = (
 	{ children }: Props
 ): ReactNode => (
-	<div className="w-full flex flex-row flex-wrap *:flex-1">
+	<div className={styles.container}>
 		{children}
 	</div>
 );

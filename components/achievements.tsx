@@ -4,6 +4,7 @@
  * Project: resume
  */
 
+import styles from "./achievements.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 import type { AchievementsAndSkillsObject } from "@/data/achievements-and-skills-object";
 
@@ -17,15 +18,15 @@ export const Achievements: FunctionComponent<Props> = (
 	
 	const items: ReactNode = achievements.map(
 		({ name }: AchievementsAndSkillsObject) => (
-			<div key={name} className="not-print:min-w-12 py-2 px-4 my-2 mx-4 rounded-lg bg-[#FFF1] print:p-0 print:mx-6">
-				<p className="text-center font-(family-name:--font-header)">{name}</p>
+			<div key={name} className={styles.item}>
+				<p className={styles.itemText}>{name}</p>
 			</div>
 		)
 	);
 	
 	return (
-		<div className="flex flex-col justify-center items-center">
-			<div className="w-full flex flex-row flex-wrap justify-center items-start print:justify-start">
+		<div className={styles.container}>
+			<div className={styles.innerContainer}>
 				{items}
 			</div>
 		</div>

@@ -1,0 +1,58 @@
+/*
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
+ * 6:54 PM -- July 24th, 2026
+ * Project: resume
+ */
+
+.container {
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	.innerContainer {
+		
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		
+		@media print {
+			
+			justify-content: flex-start;
+			
+		}
+		
+		.item {
+			
+			min-width: 3rem;
+			padding-block: 0.5rem;
+			padding-inline: 1rem;
+			margin-block: 0.5rem;
+			margin-inline: 1rem;
+			border-radius: 0.5rem;
+			background-color: #FFF1;
+			
+			@media print {
+				
+				min-width: unset;
+				padding: 0;
+				margin-inline: 1.5rem;
+				
+			}
+			
+			.itemText {
+				
+				text-align: center;
+				font-family: var(--font-header);
+				
+			}
+			
+		}
+		
+	}
+	
+}
