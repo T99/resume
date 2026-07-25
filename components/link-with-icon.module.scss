@@ -50,10 +50,7 @@
 		
 		.linkText {
 			
-			font-size: 0.875rem;
-			line-height: calc(1.25 / 0.875);
-			letter-spacing: -0.025em;
-			font-family: var(--font-header);
+			font-size: 1rem;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
