@@ -35,12 +35,9 @@ const Home: FunctionComponent = (): ReactNode => (
 			<ProfessionalHistory history={resume.professionalHistory} />
 			{Object.entries(resume.skillsSections).map(
 				([sectionTitle, sectionItems]: [string, SkillObject[]]): ReactNode =>
-					<ResumeSection title={sectionTitle} key={sectionTitle}>
-						<Skills skills={sectionItems.toSorted(
-							(a: SkillObject, b: SkillObject): number =>
-								a.name.localeCompare(b.name)
-						)} />
-					</ResumeSection>
+					<Skills sectionTitle={sectionTitle}
+							skills={sectionItems}
+							key={sectionTitle} />
 			)}
 		</div>
 	</div>

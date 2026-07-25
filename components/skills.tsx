@@ -6,33 +6,38 @@
 
 import styles from "./skills.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
+import { ResumeSection } from "@/components/resume-section";
 
 export type SkillObject = {
 	name: string,
 };
 
 export type Props = Readonly<{
+	sectionTitle: string,
 	skills: SkillObject[],
 }>;
 
 export const Skills: FunctionComponent<Props> = ({
+	sectionTitle,
 	skills,
 }: Props): ReactNode => {
 	
-	const items: ReactNode = skills.map(
-		({ name }: SkillObject) => (
-			<div key={name} className={styles.item}>
-				<p className={styles.itemText}>{name}</p>
-			</div>
-		)
-	);
+	const items: ReactNode = skills
+		.toSorted((a: SkillObject, b: SkillObject): number => a.name.localeCompare(b.name))
+		.map(({ name }: SkillObject): ReactNode => (
+				<div key={name} className={styles.item}>
+					<p className={styles.itemText}>{name}</p>
+				</div>
+		));
 	
 	return (
-		<div className={styles.container}>
-			<div className={styles.innerContainer}>
-				{items}
+		<ResumeSection title={sectionTitle}>
+			<div className={styles.container}>
+				<div className={styles.innerContainer}>
+					{items}
+				</div>
 			</div>
-		</div>
+		</ResumeSection>
 	);
 	
 };
