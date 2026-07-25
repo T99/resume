@@ -10,9 +10,9 @@ import type { FunctionComponent, ReactNode } from "react";
 import { resume } from "@/resume-data";
 import { Columns } from "@/components/columns";
 import { ResumeSection } from "@/components/resume-section";
-import { LinkWithIcon, type LinkWithIconObject } from "@/components/link-with-icon";
-import { ProfessionalHistory, type ProfessionalHistoryObject } from "@/components/professional-history";
+import { ProfessionalHistory } from "@/components/professional-history";
 import { Skills, SkillObject } from "@/components/skills";
+import { LinkSection } from "@/components/link-section";
 
 const Home: FunctionComponent = (): ReactNode => (
 	<div className={styles.container}>
@@ -21,16 +21,8 @@ const Home: FunctionComponent = (): ReactNode => (
 				<h1 className={styles.name}>Trevor Sears</h1>
 			</ResumeSection>
 			<Columns>
-				<ResumeSection title="Contact Information">
-					{resume.contactInformation.map((item: LinkWithIconObject): ReactNode =>
-						<LinkWithIcon key={item.name} {...item} />
-					)}
-				</ResumeSection>
-				<ResumeSection title="Find Me Online">
-					{resume.socialMediaLinks.map((item: LinkWithIconObject): ReactNode =>
-						<LinkWithIcon key={item.name} {...item} />
-					)}
-				</ResumeSection>
+				<LinkSection sectionTitle="Contact Information" links={resume.contactInformation} />
+				<LinkSection sectionTitle="Find Me Online" links={resume.socialMediaLinks} />
 			</Columns>
 			<ProfessionalHistory history={resume.professionalHistory} />
 			{Object.entries(resume.skillsSections).map(
