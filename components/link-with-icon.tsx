@@ -4,19 +4,19 @@
  * Project: resume
  */
 
-import styles from "./contact-information.module.scss";
+import styles from "./link-with-icon.module.scss";
 import type { ReactElement, FunctionComponent, ReactNode } from "react";
 
-export type ContactInformationObject = {
+export type LinkWithIconObject = {
 	name: string,
 	icon: ReactElement,
 	content: string,
 	link: string,
 };
 
-export type Props = Readonly<ContactInformationObject>;
+export type Props = Readonly<LinkWithIconObject>;
 
-export const ContactInformation: FunctionComponent<Props> = ({
+export const LinkWithIcon: FunctionComponent<Props> = ({
 	name,
 	icon,
 	content,

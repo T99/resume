@@ -10,7 +10,7 @@ import type { FunctionComponent, ReactNode } from "react";
 import { resume } from "@/resume-data";
 import { Columns } from "@/components/columns";
 import { ResumeSection } from "@/components/resume-section";
-import { ContactInformation, type ContactInformationObject } from "@/components/contact-information";
+import { LinkWithIcon, type LinkWithIconObject } from "@/components/link-with-icon";
 import { ProfessionalHistory, type ProfessionalHistoryObject } from "@/components/professional-history";
 import { Skills, SkillObject } from "@/components/skills";
 
@@ -22,13 +22,13 @@ const Home: FunctionComponent = (): ReactNode => (
 			</ResumeSection>
 			<Columns>
 				<ResumeSection title="Contact Information">
-					{resume.contactInformation.map((item: ContactInformationObject): ReactNode =>
-						<ContactInformation key={item.name} {...item} />
+					{resume.contactInformation.map((item: LinkWithIconObject): ReactNode =>
+						<LinkWithIcon key={item.name} {...item} />
 					)}
 				</ResumeSection>
 				<ResumeSection title="Find Me Online">
-					{resume.socialMediaLinks.map((item: ContactInformationObject): ReactNode =>
-						<ContactInformation key={item.name} {...item} />
+					{resume.socialMediaLinks.map((item: LinkWithIconObject): ReactNode =>
+						<LinkWithIcon key={item.name} {...item} />
 					)}
 				</ResumeSection>
 			</Columns>

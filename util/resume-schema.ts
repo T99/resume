@@ -4,7 +4,7 @@
  * Project: resume
  */
 
-import type { ContactInformationObject } from "@/components/contact-information";
+import type { LinkWithIconObject } from "@/components/link-with-icon";
 import type { ProfessionalHistoryObject } from "@/components/professional-history";
 import type { SkillObject } from "@/components/skills";
 
@@ -12,8 +12,8 @@ export type Resume = {
 	name: string;
 	title: string;
 	bio: string;
-	contactInformation: ContactInformationObject[];
-	socialMediaLinks: ContactInformationObject[];
+	contactInformation: LinkWithIconObject[];
+	socialMediaLinks: LinkWithIconObject[];
 	professionalHistory: ProfessionalHistoryObject[];
 	skillsSections: Record<string, SkillObject[]>;
 };
