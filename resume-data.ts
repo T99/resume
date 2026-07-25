@@ -15,7 +15,9 @@ import phoneIcon from "@/assets/icons/phone.svg";
 export const resume: Resume = {
 	name: "Trevor Sears",
 	title: "Software Engineer",
-	bio: "",
+	bio: "Full-stack software engineer with experience designing developer tooling, analytics platforms, and modern " +
+		"web applications. Strong background in Typescript, React, Next.js, Rust, SQL, and API design with a focus " +
+		"on maintainable architecture, developer productivity, and solving complex technical problems.",
 	contactInformation: [
 		{
 			name: "Mobile Phone Number",
@@ -59,141 +61,298 @@ export const resume: Resume = {
 	professionalHistory: [
 		{
 			companyName: "Ampel Feedback",
-			positionTitle: "Front-end Developer & Designer",
+			positionTitle: "Front End Developer & Designer",
 			startDate: "September 2018",
-			endDate: "March 2020",
-			description: "Developed a scratch-built front-end SPA framework for " +
-				"building highly dynamic and interactive web apps that was used " +
-				"as the engine of Ampel Feedback’s flagship customer feedback " +
-				"kiosk. Also utilized React and Redux to create a multi-tenant " +
-				"management dashboard for clients. Highly independent workflow, " +
-				"operating remotely to Traverse City while living in Houghton, MI."
+			endDate: "June 2020",
+			description: undefined,
+			bullets: [
+				"Designed and developed a custom React/Redux single-page application framework that served as the foundation for the company's flagship customer feedback kiosk platform.",
+				"Built a multi-tenant client management dashboard for configuring and administering customer deployments.",
+				"Implemented highly interactive front-end interfaces with an emphasis on maintainability, responsiveness, and reusable architecture.",
+			],
 		},
 		{
 			companyName: "Knorr Marketing",
 			positionTitle: "Full Stack Developer",
 			startDate: "March 2021",
-			endDate: "Present",
-			description: "Worked to maintain and improve a proprietary PHP-based " +
-				"CMS that specialized in the area of furniture eCommerce " +
-				"websites for a host of international clients. Operated as a " +
-				"member of a small team responsible for backing 40+ sites, as " +
-				"well as a database/catalogue of hundreds of thousands of " +
-				"products, associated product information, and eCommerce data."
-			
+			endDate: "June 2023",
+			description: undefined,
+			bullets: [
+				"Modernized features for a proprietary multi-tenant PHP-based CMS powering the eCommerce websites of more than 40 independent businesses.",
+				"Built full-stack functionality supporting hundreds of thousands of catalog products and their associated metadata across a shared platform.",
+				"Improved existing backend systems and customer-facing functionality while working as part of a small engineering team.",
+			],
+		},
+		{
+			companyName: "Unite Digital",
+			positionTitle: "Software Engineer",
+			startDate: "June 2023",
+			endDate: "April 2026",
+			description: undefined,
+			bullets: [
+				"Helped lead the complete modernization of a legacy React analytics dashboard by rebuilding it as a Next.js application.",
+				"Reduced technical debt while improving maintainability, developer experience, and the long-term scalability of the platform.",
+				"Engineered full-stack features for analytics dashboards and internal business tooling used across the organization to deliver performant, user-focused functionality.",
+			],
 		},
 	],
 	skillsSections: {
 		"Programming Languages": [
 			{
-				name: "JavaScript",
-			},
-			{
-				name: "TypeScript",
-			},
-			{
-				name: "Rust",
-			},
-			{
-				name: "PHP",
-			},
-			{
-				name: "Dash/Bash Scripting",
-			},
-			{
 				name: "C",
+				link: "https://www.c-language.org/",
+			},
+			{
+				name: "C#",
+				link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
 			},
 			{
 				name: "C++",
-			},
-			{
-				name: "C#/.NET",
-			},
-			{
-				name: "Java",
-			},
-			{
-				name: "Python",
+				link: "https://isocpp.org/",
 			},
 			{
 				name: "Go",
+				link: "https://go.dev/",
+			},
+			{
+				name: "Java",
+				link: "https://www.oracle.com/java/",
+			},
+			{
+				name: "JavaScript",
+				link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+			},
+			{
+				name: "PHP",
+				link: "https://www.php.net/",
+			},
+			{
+				name: "Python",
+				link: "https://www.python.org/",
 			},
 			{
 				name: "Ruby",
+				link: "https://www.ruby-lang.org/",
 			},
 			{
-				name: "HTML",
+				name: "Rust",
+				link: "https://rust-lang.org/",
 			},
 			{
-				name: "CSS",
-			},
-			{
-				name: "Sass",
-			},
-			{
-				name: "SQL (MySQL, PSQL)",
-			},
-			{
-				name: "Powershell Scripting",
-			},
-			{
-				name: "Regular Expressions (PCRE, etc.)",
+				name: "TypeScript",
+				link: "https://www.typescriptlang.org/",
 			},
 		],
-		"Frameworks & Technologies": [
+		"Scripting, Markup, & Other Dialects": [
 			{
-				name: "ReactJS",
+				name: "Bash",
+				link: "https://en.wikipedia.org/wiki/Bash_(Unix_shell)",
 			},
 			{
-				name: "NextJS",
+				name: "CSS3",
+				link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
 			},
 			{
-				name: "Advanced *nix Shell",
+				name: "GraphQL",
+				link: "https://graphql.org/",
 			},
 			{
-				name: "MongoDB/NoSQL",
+				name: "HTML5",
+				link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
 			},
 			{
-				name: "NodeJS & NPM",
+				name: "JSON",
+				link: "https://www.json.org/",
 			},
 			{
-				name: "Advanced Git",
+				name: "Markdown",
+				link: "https://en.wikipedia.org/wiki/Markdown",
 			},
 			{
-				name: "Windows Command Line/Powershell",
+				name: "PowerShell",
+				link: "https://learn.microsoft.com/en-us/powershell/",
 			},
 			{
-				name: "Domain & DNS Management",
+				name: "Regular Expressions (Regex)",
+				link: "https://en.wikipedia.org/wiki/Regular_expression",
 			},
 			{
-				name: "GSuite/Google Workspace Management",
+				name: "Sass/SCSS",
+				link: "https://sass-lang.com/",
 			},
 			{
-				name: "MySQL",
+				name: "SQL",
+				link: "https://en.wikipedia.org/wiki/SQL",
 			},
 			{
-				name: "Postgres",
+				name: "T-SQL",
+				link: "https://learn.microsoft.com/en-us/sql/t-sql/language-reference",
 			},
 			{
-				name: "Vercel",
+				name: "TOML",
+				link: "https://toml.io/",
+			},
+			{
+				name: "XML",
+				link: "https://en.wikipedia.org/wiki/XML",
+			},
+			{
+				name: "YAML",
+				link: "https://yaml.org/",
+			},
+		],
+		"Web Development Frameworks & Tooling": [
+			{
+				name: "Angular",
+				link: "https://angular.dev/",
+			},
+			{
+				name: "Babel",
+				link: "https://babeljs.io/",
+			},
+			{
+				name: "Browserify",
+				link: "https://browserify.org/",
+			},
+			{
+				name: "Express.js",
+				link: "https://expressjs.com/",
+			},
+			{
+				name: "Jest",
+				link: "https://jestjs.io/",
+			},
+			{
+				name: "Next.js",
+				link: "https://nextjs.org/",
+			},
+			{
+				name: "Nuxt.js",
+				link: "https://nuxt.com/",
+			},
+			{
+				name: "Node.js & NPM",
+				link: "https://nodejs.org/",
+			},
+			{
+				name: "pnpm",
+				link: "https://pnpm.io/",
+			},
+			{
+				name: "React",
+				link: "https://react.dev/",
+			},
+			{
+				name: "Redux",
+				link: "https://redux.js.org/",
+			},
+			{
+				name: "TanStack",
+				link: "https://tanstack.com/",
+			},
+			{
+				name: "Turbopack",
+				link: "https://nextjs.org/docs/app/api-reference/turbopack",
+			},
+			{
+				name: "Vite",
+				link: "https://vite.dev/",
 			},
 			{
 				name: "Vue",
+				link: "https://vuejs.org/",
 			},
 			{
-				name: "Angular",
+				name: "Webpack",
+				link: "https://webpack.js.org/",
 			},
 			{
-				name: "Webpack, Babel, Browserify",
+				name: "yarn",
+				link: "https://yarnpkg.com/",
+			}
+		],
+		"Developer Tooling & Technologies": [
+			{
+				name: "CI/CD",
+				link: "https://en.wikipedia.org/wiki/CI/CD",
+			},
+			{
+				name: "Docker",
+				link: "https://www.docker.com/",
+			},
+			{
+				name: "ESLint",
+				link: "https://eslint.org/",
+			},
+			{
+				name: "Git",
+				link: "https://git-scm.com/",
+			},
+			{
+				name: "GitHub Actions",
+				link: "https://github.com/features/actions",
+			},
+			{
+				name: "Linux",
+				link: "https://www.linux.org/",
+			},
+			{
+				name: "MongoDB",
+				link: "https://www.mongodb.com/",
+			},
+			{
+				name: "MySQL",
+				link: "https://www.mysql.com/",
+			},
+			{
+				name: "MariaDB",
+				link: "https://mariadb.org/",
+			},
+			{
+				name: "OpenAPI/Swagger",
+				link: "https://www.openapis.org/",
+			},
+			{
+				name: "Postgres",
+				link: "https://www.postgresql.org/",
+			},
+			{
+				name: "Prettier",
+				link: "https://prettier.io/",
+			},
+			{
+				name: "REST APIs",
+				link: "https://developer.mozilla.org/en-US/docs/Glossary/REST",
+			},
+			{
+				name: "WebSockets",
+				link: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+			},
+		],
+		"Cloud Platforms": [
+			{
+				name: "AWS (Amazon Web Services)",
+				link: "https://aws.amazon.com/",
 			},
 			{
 				name: "Cloudflare",
+				link: "https://www.cloudflare.com/",
 			},
 			{
 				name: "DigitalOcean",
+				link: "https://www.digitalocean.com/",
 			},
 			{
-				name: "AWS (S3, EC2, Cloudfront, Lambda, etc.)",
+				name: "Google Cloud Platform",
+				link: "https://cloud.google.com/",
+			},
+			{
+				name: "Microsoft Azure",
+				link: "https://azure.microsoft.com/",
+			},
+			{
+				name: "Vercel",
+				link: "https://vercel.com/",
 			},
 		],
 	},
