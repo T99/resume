@@ -1,5 +1,5 @@
 /*
- * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 9:57 PM -- June 29th, 2026
  * Project: resume
  */

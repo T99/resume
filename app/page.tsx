@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 /*
- * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 10:43 PM -- June 29th, 2026
  * Project: resume
  */
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
 		title,
 		description,
 		type: "profile",
-		url: "https://resume.trevorsears.com/",
+		url: "https://resume.trevorsea.rs/",
 		images: [{
-			url: "https://resume.trevorsears.com/headshot.jpg",
+			url: "https://resume.trevorsea.rs/headshot.jpg",
 			width: 961,
 			height: 961,
 			alt: "A headshot image of Trevor Sears.",
