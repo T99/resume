@@ -6,7 +6,7 @@
 
 import type { ContactInformationObject } from "@/components/contact-information";
 import type { ProfessionalHistoryObject } from "@/components/professional-history";
-import type { AchievementsAndSkillsObject } from "@/components/achievements";
+import type { SkillObject } from "@/components/skills";
 
 export type Resume = {
 	name: string;
@@ -15,6 +15,6 @@ export type Resume = {
 	contactInformation: ContactInformationObject[];
 	socialMediaLinks: ContactInformationObject[];
 	professionalHistory: ProfessionalHistoryObject[];
-	skillsSections: Record<string, AchievementsAndSkillsObject[]>;
+	skillsSections: Record<string, SkillObject[]>;
 };
 

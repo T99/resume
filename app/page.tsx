@@ -12,7 +12,7 @@ import { Columns } from "@/components/columns";
 import { ResumeSection } from "@/components/resume-section";
 import { ContactInformation, type ContactInformationObject } from "@/components/contact-information";
 import { ProfessionalHistory, type ProfessionalHistoryObject } from "@/components/professional-history";
-import { Achievements, AchievementsAndSkillsObject } from "@/components/achievements";
+import { Skills, SkillObject } from "@/components/skills";
 
 const Home: FunctionComponent = (): ReactNode => (
 	<div className={styles.container}>
@@ -34,10 +34,10 @@ const Home: FunctionComponent = (): ReactNode => (
 			</Columns>
 			<ProfessionalHistory history={resume.professionalHistory} />
 			{Object.entries(resume.skillsSections).map(
-				([sectionTitle, sectionItems]: [string, AchievementsAndSkillsObject[]]): ReactNode =>
+				([sectionTitle, sectionItems]: [string, SkillObject[]]): ReactNode =>
 					<ResumeSection title={sectionTitle} key={sectionTitle}>
-						<Achievements achievements={sectionItems.toSorted(
-							(a: AchievementsAndSkillsObject, b: AchievementsAndSkillsObject): number =>
+						<Skills skills={sectionItems.toSorted(
+							(a: SkillObject, b: SkillObject): number =>
 								a.name.localeCompare(b.name)
 						)} />
 					</ResumeSection>

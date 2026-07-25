@@ -4,23 +4,23 @@
  * Project: resume
  */
 
-import styles from "./achievements.module.scss";
+import styles from "./skills.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 
-export type AchievementsAndSkillsObject = {
+export type SkillObject = {
 	name: string,
 };
 
 export type Props = Readonly<{
-	achievements: AchievementsAndSkillsObject[],
+	skills: SkillObject[],
 }>;
 
-export const Achievements: FunctionComponent<Props> = (
-	{ achievements }: Props,
-): ReactNode => {
+export const Skills: FunctionComponent<Props> = ({
+	skills,
+}: Props): ReactNode => {
 	
-	const items: ReactNode = achievements.map(
-		({ name }: AchievementsAndSkillsObject) => (
+	const items: ReactNode = skills.map(
+		({ name }: SkillObject) => (
 			<div key={name} className={styles.item}>
 				<p className={styles.itemText}>{name}</p>
 			</div>
