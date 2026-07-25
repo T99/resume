@@ -61,6 +61,7 @@ export const resume: Resume = {
 	professionalHistory: [
 		{
 			companyName: "Ampel Feedback",
+			companyLink: "https://www.facebook.com/ampelfeedback/",
 			positionTitle: "Front End Developer & Designer",
 			startDate: "September 2018",
 			endDate: "June 2020",
@@ -73,6 +74,7 @@ export const resume: Resume = {
 		},
 		{
 			companyName: "Knorr Marketing",
+			companyLink: "https://www.knorrmarketing.com/",
 			positionTitle: "Full Stack Developer",
 			startDate: "March 2021",
 			endDate: "June 2023",
@@ -85,6 +87,7 @@ export const resume: Resume = {
 		},
 		{
 			companyName: "Unite Digital",
+			companyLink: "https://unitedigital.com/",
 			positionTitle: "Software Engineer",
 			startDate: "June 2023",
 			endDate: "April 2026",

@@ -35,6 +35,16 @@
 			line-height: calc(1.75 / 1.25);
 			font-weight: 700;
 			
+			.companyName {
+				
+				&:hover {
+					
+					text-decoration: underline;
+					
+				}
+				
+			}
+			
 			.position {
 				
 				color: #FFFB;

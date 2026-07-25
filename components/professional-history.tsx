@@ -10,6 +10,7 @@ import { ResumeSection } from "@/components/resume-section";
 
 export type ProfessionalHistoryObject = {
     companyName: string,
+	companyLink: string,
     positionTitle: string,
     startDate: string,
     endDate: string,
@@ -27,6 +28,7 @@ export const ProfessionalHistory: FunctionComponent<Props> = ({
     <ResumeSection title="Professional History">
         {history.map(({
             companyName,
+			companyLink,
             positionTitle,
             startDate,
             endDate,
@@ -36,7 +38,11 @@ export const ProfessionalHistory: FunctionComponent<Props> = ({
             <div className={styles.container} key={companyName + positionTitle}>
                 <div className={styles.headerContainer}>
                     <h3 className={styles.header}>
-                        {companyName} <span className={styles.position}>{positionTitle}</span>
+						<a href={companyLink}
+						   className={styles.companyName}
+						   target="_blank"
+						   rel="noopener noreferrer">{companyName}</a>{" "}
+						<span className={styles.position}>{positionTitle}</span>
                     </h3>
                     <h3 className={styles.timespan}>{startDate} - {endDate}</h3>
                 </div>
