@@ -6,7 +6,14 @@
 
 import styles from "./professional-history.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
-import type { ProfessionalHistoryObject } from "@/data/professional-history-object";
+
+export type ProfessionalHistoryObject = {
+    companyName: string,
+    positionTitle: string,
+    startDate: string,
+    endDate: string,
+    description: string,
+};
 
 export type Props = Readonly<ProfessionalHistoryObject>;
 

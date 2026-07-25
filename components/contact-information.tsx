@@ -5,8 +5,14 @@
  */
 
 import styles from "./contact-information.module.scss";
-import type { FunctionComponent, ReactNode } from "react";
-import type { ContactInformationObject } from "../data/contact-information-object";
+import type { ReactElement, FunctionComponent, ReactNode } from "react";
+
+export type ContactInformationObject = {
+	name: string,
+	icon: ReactElement,
+	content: string,
+	link: string,
+};
 
 export type Props = Readonly<ContactInformationObject>;
 

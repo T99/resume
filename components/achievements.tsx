@@ -6,7 +6,10 @@
 
 import styles from "./achievements.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
-import type { AchievementsAndSkillsObject } from "@/data/achievements-and-skills-object";
+
+export type AchievementsAndSkillsObject = {
+	name: string,
+};
 
 export type Props = Readonly<{
 	achievements: AchievementsAndSkillsObject[],

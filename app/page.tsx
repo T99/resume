@@ -7,29 +7,12 @@ import type { Metadata } from 'next';
 
 import styles from "./page.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
-import { CONTACT_INFORMATION, type ContactInformationObject, FIND_ME_ONLINE } from "@/data/contact-information-object";
-import { PROFESSIONAL_HISTORY, type ProfessionalHistoryObject } from "@/data/professional-history-object";
-import { PROGRAMMING_FRAMEWORKS_AND_TECHNOLOGIES, PROGRAMMING_LANGUAGES } from "@/data/achievements-and-skills-object";
-import { ContactInformation } from "@/components/contact-information";
-import { ProfessionalHistory } from "@/components/professional-history";
-import { ResumeSection } from "@/components/resume-section";
+import { resume } from "@/resume-data";
 import { Columns } from "@/components/columns";
-import { Achievements } from "@/components/achievements";
-
-const contactInformation: ReactNode = CONTACT_INFORMATION.map(
-	(item: ContactInformationObject): ReactNode =>
-		<ContactInformation key={item.name} {...item} />
-);
-
-const findMeOnline: ReactNode = FIND_ME_ONLINE.map(
-	(item: ContactInformationObject): ReactNode =>
-		<ContactInformation key={item.name} {...item} />
-);
-
-const professionalHistory: ReactNode = PROFESSIONAL_HISTORY.map(
-	(item: ProfessionalHistoryObject): ReactNode =>
-		<ProfessionalHistory key={item.startDate} {...item} />
-);
+import { ResumeSection } from "@/components/resume-section";
+import { ContactInformation, type ContactInformationObject } from "@/components/contact-information";
+import { ProfessionalHistory, type ProfessionalHistoryObject } from "@/components/professional-history";
+import { Achievements, AchievementsAndSkillsObject } from "@/components/achievements";
 
 const Home: FunctionComponent = (): ReactNode => (
 	<div className={styles.container}>
@@ -39,28 +22,37 @@ const Home: FunctionComponent = (): ReactNode => (
 			</ResumeSection>
 			<Columns>
 				<ResumeSection title="Contact Information">
-					{contactInformation}
+					{resume.contactInformation.map((item: ContactInformationObject): ReactNode =>
+						<ContactInformation key={item.name} {...item} />
+					)}
 				</ResumeSection>
 				<ResumeSection title="Find Me Online">
-					{findMeOnline}
+					{resume.socialMediaLinks.map((item: ContactInformationObject): ReactNode =>
+						<ContactInformation key={item.name} {...item} />
+					)}
 				</ResumeSection>
 			</Columns>
 			<ResumeSection title="Professional History">
-				{professionalHistory}
+				{resume.professionalHistory.map((item: ProfessionalHistoryObject): ReactNode =>
+					<ProfessionalHistory key={item.startDate} {...item} />
+				)}
 			</ResumeSection>
-			<ResumeSection title="Programming Languages">
-				<Achievements achievements={PROGRAMMING_LANGUAGES} />
-			</ResumeSection>
-			<ResumeSection title="Technologies">
-				<Achievements achievements={PROGRAMMING_FRAMEWORKS_AND_TECHNOLOGIES} />
-			</ResumeSection>
+			{Object.entries(resume.skillsSections).map(
+				([sectionTitle, sectionItems]: [string, AchievementsAndSkillsObject[]]): ReactNode =>
+					<ResumeSection title={sectionTitle} key={sectionTitle}>
+						<Achievements achievements={sectionItems.toSorted(
+							(a: AchievementsAndSkillsObject, b: AchievementsAndSkillsObject): number =>
+								a.name.localeCompare(b.name)
+						)} />
+					</ResumeSection>
+			)}
 		</div>
 	</div>
 );
 
 export default Home;
 
-const title: string = "Trevor Sears | Resume";
+const title: string = `${resume.name} | Resume`;
 const description: string = "An overview of my professional background, experience, accomplishments, and outlook.";
 
 export const metadata: Metadata = {
@@ -75,7 +67,7 @@ export const metadata: Metadata = {
 			url: "https://resume.trevorsea.rs/headshot.jpg",
 			width: 961,
 			height: 961,
-			alt: "A headshot image of Trevor Sears.",
+			alt: `A headshot image of ${resume.name}.`,
 		}]
 	}
 };
