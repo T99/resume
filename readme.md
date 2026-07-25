@@ -1,6 +1,6 @@
 # [resume](https://resume.trevorsea.rs/)
 
-A resume website for myself, built with React + NextJS, and deployed on Vercel
+A resume website for myself, built with Next.js, and deployed on Cloudflare
 at [https://resume.trevorsea.rs/](https://resume.trevorsea.rs/).
 
 ## Want to run it locally?
