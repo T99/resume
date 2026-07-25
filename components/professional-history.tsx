@@ -6,6 +6,7 @@
 
 import styles from "./professional-history.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
+import { ResumeSection } from "@/components/resume-section";
 
 export type ProfessionalHistoryObject = {
     companyName: string,
@@ -15,22 +16,30 @@ export type ProfessionalHistoryObject = {
     description: string,
 };
 
-export type Props = Readonly<ProfessionalHistoryObject>;
+export type Props = Readonly<{
+    history: ProfessionalHistoryObject[];
+}>;
 
 export const ProfessionalHistory: FunctionComponent<Props> = ({
-    companyName,
-    positionTitle,
-    startDate,
-    endDate,
-    description,
+    history,
 }: Props): ReactNode => (
-    <div className={styles.container}>
-        <div className={styles.headerContainer}>
-            <h3 className={styles.header}>
-                {companyName}, <span className={styles.position}>{positionTitle}</span>
-            </h3>
-            <h3 className={styles.timespan}>{startDate} - {endDate}</h3>
-        </div>
-        <p className={styles.description}>{description}</p>
-    </div>
+    <ResumeSection title="Professional History">
+        {history.map(({
+            companyName,
+            positionTitle,
+            startDate,
+            endDate,
+            description,
+        }: ProfessionalHistoryObject): ReactNode => (
+            <div className={styles.container} key={companyName + positionTitle}>
+                <div className={styles.headerContainer}>
+                    <h3 className={styles.header}>
+                        {companyName}, <span className={styles.position}>{positionTitle}</span>
+                    </h3>
+                    <h3 className={styles.timespan}>{startDate} - {endDate}</h3>
+                </div>
+                <p className={styles.description}>{description}</p>
+            </div>
+        ))}
+    </ResumeSection>
 );

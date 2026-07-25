@@ -32,11 +32,7 @@ const Home: FunctionComponent = (): ReactNode => (
 					)}
 				</ResumeSection>
 			</Columns>
-			<ResumeSection title="Professional History">
-				{resume.professionalHistory.map((item: ProfessionalHistoryObject): ReactNode =>
-					<ProfessionalHistory key={item.startDate} {...item} />
-				)}
-			</ResumeSection>
+			<ProfessionalHistory history={resume.professionalHistory} />
 			{Object.entries(resume.skillsSections).map(
 				([sectionTitle, sectionItems]: [string, AchievementsAndSkillsObject[]]): ReactNode =>
 					<ResumeSection title={sectionTitle} key={sectionTitle}>
