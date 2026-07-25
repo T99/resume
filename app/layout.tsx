@@ -7,17 +7,17 @@
 import "./globals.css";
 import styles from "./layout.module.scss";
 import type { FunctionComponent, PropsWithChildren, ReactNode } from "react";
-import { Fauna_One, Playfair_Display } from "next/font/google";
+import { Google_Sans, Noto_Serif } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 
-const playfairDisplay = Playfair_Display({
+const baseFont = Google_Sans({
 	variable: "--font-standard",
 	subsets: ["latin"],
 	weight: ["400", "700"],
 });
 
 
-const faunaOne = Fauna_One({
+const headerFont = Noto_Serif({
 	variable: "--font-header",
 	subsets: ["latin"],
 	weight: "400",
@@ -27,7 +27,7 @@ const RootLayout: FunctionComponent<Readonly<PropsWithChildren>> = ({
 	children,
 }: Readonly<PropsWithChildren>): ReactNode => (
 	<html lang="en"
-	      className={[styles.html, playfairDisplay.variable, faunaOne.variable].join(" ")}>
+	      className={[styles.html, baseFont.variable, headerFont.variable].join(" ")}>
 		<GoogleTagManager gtmId="GTM-NZ9Q5RJ" />
 		<body className={styles.body}>
 			{children}
