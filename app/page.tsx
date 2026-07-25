@@ -18,7 +18,7 @@ const Home: FunctionComponent = (): ReactNode => (
 	<div className={styles.container}>
 		<div className={styles.innerContainer}>
 			<ResumeSection>
-				<h1 className={styles.name}>Trevor Sears</h1>
+				<h1 className={styles.name}>{resume.name}</h1>
 			</ResumeSection>
 			<Columns>
 				<LinkSection sectionTitle="Contact Information" links={resume.contactInformation} />
