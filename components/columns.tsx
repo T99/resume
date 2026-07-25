@@ -1,9 +1,10 @@
 /*
- * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 10:17 PM -- August 17th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 
+import styles from "./columns.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 
 export type Props = Readonly<{ 
@@ -13,7 +14,7 @@ export type Props = Readonly<{
 export const Columns: FunctionComponent<Props> = (
 	{ children }: Props
 ): ReactNode => (
-	<div className="w-full flex flex-row flex-wrap *:flex-1">
+	<div className={styles.container}>
 		{children}
 	</div>
 );

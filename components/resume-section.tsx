@@ -1,9 +1,10 @@
 /*
- * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 4:11 PM -- August 17th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
 
+import styles from "./resume-section.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
 
 export type Props = Readonly<{ 
@@ -15,9 +16,9 @@ export const ResumeSection: FunctionComponent<Props> = ({
 	title,
 	children,
 }: Props): ReactNode => (
-	<div className="w-full p-2">
-		{title ? <h3 className="mx-2 py-2.5 px-2 font-bold text-3xl print:border-b-2 print:border-b-black">{title}</h3> : null}
-		<div className="p-4 rounded-xl bg-[#FFF3]">
+	<div className={styles.container}>
+		{title ? <h3 className={styles.sectionTitle}>{title}</h3> : null}
+		<div className={styles.innerContainer}>
 			{children}
 		</div>
 	</div>

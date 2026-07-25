@@ -1,27 +1,60 @@
 /*
- * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/).
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 7:29 PM -- August 16th, 2022
- * Project: resume.trevorsears.com
+ * Project: resume
  */
-import type { FunctionComponent, ReactNode } from "react";
-import type { ProfessionalHistoryObject } from "@/data/professional-history-object";
 
-export type Props = Readonly<ProfessionalHistoryObject>;
+import styles from "./professional-history.module.scss";
+import type { FunctionComponent, ReactNode } from "react";
+import { ResumeSection } from "@/components/resume-section";
+
+export type ProfessionalHistoryObject = {
+    companyName: string,
+	companyLink: string,
+    positionTitle: string,
+    startDate: string,
+    endDate: string,
+    description?: string,
+	bullets?: string[],
+};
+
+export type Props = Readonly<{
+    history: ProfessionalHistoryObject[];
+}>;
 
 export const ProfessionalHistory: FunctionComponent<Props> = ({
-    companyName,
-    positionTitle,
-    startDate,
-    endDate,
-    description,
+    history,
 }: Props): ReactNode => (
-    <div className="m-1 not-first:mt-4">
-        <div className="flex flex-col md:flex-row justify-between items-baseline mb-2">
-            <h3 className="mr-5 text-xl font-bold">
-                {companyName}, <span className="text-base font-normal md:whitespace-nowrap">{positionTitle}</span>
-            </h3>
-            <h3 className="font-normal md:mt-1 md:text-right md:whitespace-nowrap">{startDate} - {endDate}</h3>
-        </div>
-        <p className="text-[#D9E8F7] text-sm leading-[1.6] text-justify=">{description}</p>
-    </div>
+    <ResumeSection title="Professional History">
+        {history.map(({
+            companyName,
+			companyLink,
+            positionTitle,
+            startDate,
+            endDate,
+            description,
+			bullets,
+        }: ProfessionalHistoryObject): ReactNode => (
+            <div className={styles.container} key={companyName + positionTitle}>
+                <div className={styles.headerContainer}>
+                    <h3 className={styles.header}>
+						<a href={companyLink}
+						   className={styles.companyName}
+						   target="_blank"
+						   rel="noopener noreferrer">{companyName}</a>{" "}
+						<span className={styles.position}>{positionTitle}</span>
+                    </h3>
+                    <h3 className={styles.timespan}>{startDate} - {endDate}</h3>
+                </div>
+				{description === undefined || description.length <= 0 ? null : <p className={styles.description}>{description}</p>}
+				{bullets === undefined || bullets.length <= 0 ? null : (
+					<ul className={styles.bullets}>
+						{bullets.map((bullet: string): ReactNode => (
+							<li key={bullet} className={styles.bullet}><p>{bullet}</p></li>
+						))}
+					</ul>
+				)}
+            </div>
+        ))}
+    </ResumeSection>
 );
