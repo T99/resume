@@ -67,12 +67,34 @@
 		
 	}
 	
-	.description {
+	.description, .bullets {
 		
 		color: #D9E8F7;
 		font-size: 0.875rem;
 		line-height: 1.6;
 		text-align: justify;
+		
+		&:not(:last-child) {
+			
+			margin-bottom: 0.5rem;
+			
+		}
+		
+	}
+	
+	.bullets {
+		
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		list-style: circle outside;
+		padding-left: 1rem;
+		
+		.bullet {
+		
+		
+		
+		}
 		
 	}
 	

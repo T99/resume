@@ -13,7 +13,8 @@ export type ProfessionalHistoryObject = {
     positionTitle: string,
     startDate: string,
     endDate: string,
-    description: string,
+    description?: string,
+	bullets?: string[],
 };
 
 export type Props = Readonly<{
@@ -30,15 +31,23 @@ export const ProfessionalHistory: FunctionComponent<Props> = ({
             startDate,
             endDate,
             description,
+			bullets,
         }: ProfessionalHistoryObject): ReactNode => (
             <div className={styles.container} key={companyName + positionTitle}>
                 <div className={styles.headerContainer}>
                     <h3 className={styles.header}>
-                        {companyName}, <span className={styles.position}>{positionTitle}</span>
+                        {companyName} <span className={styles.position}>{positionTitle}</span>
                     </h3>
                     <h3 className={styles.timespan}>{startDate} - {endDate}</h3>
                 </div>
-                <p className={styles.description}>{description}</p>
+				{description === undefined || description.length <= 0 ? null : <p className={styles.description}>{description}</p>}
+				{bullets === undefined || bullets.length <= 0 ? null : (
+					<ul className={styles.bullets}>
+						{bullets.map((bullet: string): ReactNode => (
+							<li key={bullet} className={styles.bullet}><p>{bullet}</p></li>
+						))}
+					</ul>
+				)}
             </div>
         ))}
     </ResumeSection>
