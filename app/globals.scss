@@ -1,0 +1,43 @@
+/*
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
+ * 10:43 PM -- June 29th, 2026
+ * Project: resume
+ */
+
+@use "tailwindcss";
+@use "@/util/theming";
+
+* {
+    box-sizing: border-box;
+    letter-spacing: 0.25px;
+}
+
+body {
+    
+    @include theming.theme("Deep Teal") {
+        --background: #001E26;
+        --foreground: #FFFFFF;
+    }
+    
+    @include theming.theme("Paper") {
+        --background: #FFFFFF;
+        --foreground: #000000;
+    }
+    
+    @include theming.theme("Framework") {
+        --background: #000000;
+        --foreground: #EDEDED;
+    }
+    
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-standard), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header), serif;
+}
+
+span {
+    font-family: inherit;
+}

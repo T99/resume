@@ -1,0 +1,11 @@
+/*
+ * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
+ * 10:51 PM -- July 25th, 2026
+ * Project: resume
+ */
+
+@mixin theme($theme) {
+	:root[data-theme="#{$theme}"] & {
+		@content;
+	}
+}

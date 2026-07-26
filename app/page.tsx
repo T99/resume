@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 /*
  * Created by Trevor Sears <trevor@trevorsears.com> (https://trevorsea.rs/).
  * 10:43 PM -- June 29th, 2026
@@ -7,6 +6,7 @@ import type { Metadata } from 'next';
 
 import styles from "./page.module.scss";
 import type { FunctionComponent, ReactNode } from "react";
+import type { Metadata } from 'next';
 import { resume } from "@/resume-data";
 import { Columns } from "@/components/columns";
 import { ResumeSection } from "@/components/resume-section";
